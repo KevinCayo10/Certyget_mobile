@@ -1,0 +1,61 @@
+<app-header></app-header>
+<ion-content>
+  <div class="d-flex-center">
+    <app-logo></app-logo>
+    <form>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-input
+            label="Apellidos"
+            labelPlacement="stacked"
+            placeholder="Ex.Granda Jimenez"
+            fill="solid"
+            [formControl]="form.controls.apellidos"
+          ></ion-input>
+          <div
+            class="validators"
+            style="color: red"
+            *ngIf="form.controls.apellidos.errors && form.controls.apellidos.touched"
+          >
+            <div *ngIf="form.controls.apellidos.errors?.['required']">
+              Este campo es requerido.
+            </div>
+            <div *ngIf="form.controls.apellidos.errors?.['pattern']">
+              Este campo no puede contener números.
+            </div>
+          </div>
+          <ion-input
+            label="Cédula"
+            labelPlacement="stacked"
+            placeholder="Ex.0503103756"
+            fill="solid"
+            [formControl]="form.controls.cedula"
+          >
+          </ion-input>
+          <div
+            class="validators"
+            style="color: red"
+            *ngIf="form.controls.cedula.errors && form.controls.cedula.touched"
+          >
+            <div *ngIf="form.controls.cedula.errors?.['required']">
+              Este campo es requerido.
+            </div>
+            <div *ngIf="form.controls.cedula.errors?.['pattern']">
+              Ingresa una cédula valida.
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
+      <ion-button
+        expand="block"
+        type="submit"
+        mode="ios"
+        color="submit"
+        [disabled]="form.invalid"
+      >
+        Buscar
+      </ion-button>
+    </form>
+    <app-footer></app-footer>
+  </div>
+</ion-content>

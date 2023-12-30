@@ -1,0 +1,24 @@
+<ion-header>
+  <div class="linea"></div>
+  <ion-toolbar color="certyget">
+    <ion-buttons slot="start">
+      <!-- Back Button -->
+      <ion-back-button
+        *ngIf="backButton"
+        [defaultHref]="backButton"
+      ></ion-back-button>
+
+      <!-- Dismiss Modal -->
+      <!-- <ion-button *ngIf="isModal" (click)="dismissModal()">
+        <ion-icon name="close-circle-outline"></ion-icon>
+      </ion-button> -->
+
+      <ion-menu-button *ngIf="showMenu" menu="menu-content"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>
+      <strong>{{ title }} </strong>
+      <div class="admin">CERTYGET</div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>

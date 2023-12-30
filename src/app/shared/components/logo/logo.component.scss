@@ -1,0 +1,22 @@
+.logo {
+  width: fit-content;
+  height: fit-content;
+  color: black;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+}
+.logo h3{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    margin-bottom: 10px
+}
+.logo img {
+  width: 150px;
+  height: 100%;
+  object-fit: contain;
+}

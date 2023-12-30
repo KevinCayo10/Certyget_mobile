@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background: #edfffe;
+  color: black;
+}
+app-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  background: #edfffe;
+  color: black;
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+app-logo {
+  margin: 0 auto;
+}
+ion-list {
+  background-color: red;
+  width: 85%;
+  height: 80%;
+  margin: 0 auto;
+}
+ion-input {
+  margin-bottom: 15px;
+}
+ion-button {
+  padding: 10px 50px 10px 50px;
+}
+.submit {
+  background-color: #00404c;
+}
+ion-button {
+  margin: 0 auto;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  background-color: var(--ion-color-submit);
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Certyget-movil",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
