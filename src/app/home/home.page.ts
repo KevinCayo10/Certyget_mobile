@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ServiceService } from './services/service.service';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +14,20 @@ export class HomePage {
       Validators.pattern(/^[a-zA-Z ]*$/),
     ]),
     cedula: new FormControl('', [
-      Validators.required,
-      Validators.pattern(/^[0-9]{10}$/), // Ensure it's 10 digits and numeric
+      Validators.required, // Ensure it's 10 digits and numeric
     ]),
   });
-  constructor() {}
+  constructor(private serviceCertificado: ServiceService) {}
+
+  async buscar() {
+    if (this.form.valid) {
+      const { cedula, apellidos } = this.form.value;
+      console.log(cedula, apellidos);
+      this.serviceCertificado
+        .getCertificadosByCedApe(cedula, apellidos)
+        .subscribe((result: any) => {
+          console.log(result.data[0]);
+        });
+    }
+  }
 }
