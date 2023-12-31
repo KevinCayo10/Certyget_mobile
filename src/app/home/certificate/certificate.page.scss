@@ -1,0 +1,132 @@
+.custom-content {
+  padding: 20px;
+}
+
+.custom-card {
+  margin-bottom: 20px;
+  background-color: #313338;
+}
+
+.custom-item {
+  background-color: black;
+}
+
+.custom-avatar {
+  border-radius: 50%;
+}
+
+.custom-title {
+  font-size: 1.2em;
+}
+
+.custom-date {
+  color: #888;
+}
+
+.custom-image {
+  width: fit-content;
+  height: auto;
+}
+
+.custom-card-header {
+  background-color: #004980;
+  color: #fff;
+}
+
+.custom-card-title {
+  font-size: 1.5em;
+  color: white;
+  text-align: center;
+}
+
+.custom-card-content {
+  font-size: 1.1em;
+  color: white;
+  text-align: justify;
+}
+
+.custom-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-col {
+  flex: 1;
+}
+
+.custom-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-button-text {
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #555;
+}
+.custom-footer {
+  margin-top: 0px;
+}
+
+.custom-row {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-col {
+  text-align: center;
+}
+
+.custom-download-button {
+  background-color: #004980;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  background: #edfffe;
+  color: black;
+}
+app-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  background: #edfffe;
+  color: black;
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+app-logo {
+  margin: 0 auto;
+}
+ion-list {
+  /* background-color: red; */
+  width: 85%;
+  height: 80%;
+  margin: 0 auto;
+}
+ion-input {
+  margin-bottom: 15px;
+}
+ion-button {
+  padding: 10px 50px 10px 50px;
+}
+.submit {
+  background-color: #00404c;
+}
+ion-button {
+  margin: 0 auto;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  background-color: var(--ion-color-submit);
+}
