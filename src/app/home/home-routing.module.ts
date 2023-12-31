@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
+  },
+  {
+    path: 'certificate',
+    loadChildren: () => import('./certificate/certificate.module').then( m => m.CertificatePageModule)
   }
 ];
 
