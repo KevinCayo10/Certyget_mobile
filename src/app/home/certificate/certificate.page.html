@@ -1,5 +1,8 @@
-<app-header></app-header>
+<app-header backButton="/home"></app-header>
 <ion-content class="custom-content">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <div class="d-flex-center">
     <!-- Itera sobre los certificados -->
     <ng-container *ngFor="let certificado of certificados">
@@ -32,7 +35,8 @@
         </ion-footer>
       </ion-card>
     </ng-container>
-
+    <br>
+    <br>
     <app-footer></app-footer>
   </div>
 </ion-content>
