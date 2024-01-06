@@ -9,6 +9,8 @@ import { DatePipe } from '@angular/common';
   providers: [DatePipe],
 })
 export class CertificatePage implements OnInit {
+  cursos: any[] = [];
+  cursoSeleccionado: string = ''; // Curso seleccionado por el usuario
   certificados: any[] = [];
   service = inject(ServiceService);
   loading: boolean = false;
@@ -18,8 +20,8 @@ export class CertificatePage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.certificados = this.serviceCertificado.getStoredCertificados();
-    console.log('estos son los certificados: ', this.certificados);
+    
+    this.obtenerCursos();
   }
 
   descargarCertificado(certificado: any) {
@@ -59,12 +61,12 @@ export class CertificatePage implements OnInit {
       event.target.complete();
     }, 1000);
   }
-  obtenerCertificados() {
+  /* obtenerCertificados() {
     this.loading = true;
 
     // Llama al servicio para obtener los certificados desde la API
     this.serviceCertificado
-      .getCertificadosByCedApe(
+      .getCertificadosYCursosByCedApe(
         this.certificados[0].ced_par,
         this.certificados[0].ape_pat_par
       )
@@ -72,9 +74,7 @@ export class CertificatePage implements OnInit {
         (result: any) => {
           // Actualiza la lista de certificados
           this.certificados = result.data;
-          console.log(
-            'Estoy volviendo a cargar el servicio: ' + result.data
-          );
+          console.log('Estoy volviendo a cargar el servicio: ' + result.data);
         },
         (error) => {
           console.error('Error al obtener los certificados:', error);
@@ -84,5 +84,53 @@ export class CertificatePage implements OnInit {
           this.loading = false;
         }
       );
+  } */
+  obtenerCertificados() {
+    this.loading = true;
+
+    // Asegúrate de que hay un curso seleccionado antes de hacer la solicitud
+    if (this.cursoSeleccionado) {
+      // Llama al servicio para obtener los certificados del curso seleccionado
+      this.serviceCertificado
+        .getCertificadosByCurso(
+          this.serviceCertificado.getStoredUserInfo()?.cedula,
+          this.serviceCertificado.getStoredUserInfo()?.apellido,
+          this.cursoSeleccionado
+        )
+        .subscribe(
+          (result: any) => {
+            // Actualiza la lista de certificados
+            this.certificados = result.data;
+            console.log('Estoy volviendo a cargar el servicio: ' + result.data);
+          },
+          (error) => {
+            console.error('Error al obtener los certificados:', error);
+          },
+          () => {
+            // Finaliza el indicador de carga
+            this.loading = false;
+          }
+        );
+    } else {
+      // No hay curso seleccionado, puedes manejarlo de acuerdo a tus necesidades
+      this.loading = false;
+      console.warn('No hay curso seleccionado');
+    }
+  }
+  obtenerCursos() {
+    this.serviceCertificado
+      .getCertificadosYCursosByCedApe(
+        this.serviceCertificado.getStoredUserInfo()?.cedula,
+        this.serviceCertificado.getStoredUserInfo()?.apellido
+      )
+      .subscribe({
+        next: (result: any) => {
+          this.cursos = result.data?.cursos || [];
+          console.log('cursos en el obtener cursos', this.cursos);
+        },
+        error: (error) => {
+          console.error('Error al obtener los cursos:', error);
+        },
+      });
   }
 }

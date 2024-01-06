@@ -3,17 +3,32 @@
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Elegir Curso:</ion-label>
+      <ion-select
+        [(ngModel)]="cursoSeleccionado"
+        (ionChange)="obtenerCertificados()"
+      >
+        <ion-select-option *ngFor="let curso of cursos" [value]="curso.id_cur">
+          {{ curso.nom_cur }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
   <div class="d-flex-center">
-    <!-- Itera sobre los certificados -->
     <ng-container *ngFor="let certificado of certificados">
       <ion-card class="custom-card">
-        <!-- Usa interpolación para mostrar datos dinámicos -->
         <img [src]="certificado.url_gen_cer" alt="ion" class="custom-image" />
+
         <ion-card-header class="custom-card-header">
-          <ion-card-title class="custom-card-title"
-            >{{ certificado.nom_cur }}</ion-card-title
-          >
+          <ion-card-title class="custom-card-title">
+            {{ certificado.nom_cur }}
+          </ion-card-title>
         </ion-card-header>
+
         <ion-card-content class="custom-card-content">
           Este certificado fue generado el {{
           formatearFecha(certificado.fecha_gen_cer) }}, perteneciente al curso
@@ -21,6 +36,7 @@
           formatearFecha(certificado.fecha_inicio_cur) }}, con una duración
           aproximada de {{ certificado.dur_cur }}.
         </ion-card-content>
+
         <ion-footer class="custom-footer">
           <ion-row class="custom-row">
             <ion-col center text-center class="custom-col" size="12">
@@ -35,8 +51,7 @@
         </ion-footer>
       </ion-card>
     </ng-container>
-    <br>
-    <br>
-    <app-footer></app-footer>
   </div>
+
+  <app-footer></app-footer>
 </ion-content>

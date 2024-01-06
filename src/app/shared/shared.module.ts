@@ -6,6 +6,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { ValidationCerComponent } from './components/validation-cer/validation-cer.component';
 
 @NgModule({
   declarations: [
@@ -13,13 +15,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     LogoComponent,
+    ValidationCerComponent,
   ],
-  imports: [CommonModule, IonicModule, ReactiveFormsModule, FormsModule],
+  imports: [
+    CommonModule,
+    IonicModule,
+    ReactiveFormsModule,
+    FormsModule,
+    RouterModule,
+  ],
   exports: [
     CustomInputComponent,
     HeaderComponent,
     FooterComponent,
     LogoComponent,
+    ValidationCerComponent,
   ],
 })
 export class SharedModule {}

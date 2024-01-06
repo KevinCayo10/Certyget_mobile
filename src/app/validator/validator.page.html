@@ -1,0 +1,48 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main" class="back"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="ion-no-margin">
+    <ion-img src="assets/imagenes/header.png"></ion-img>
+    <ion-card-header>
+      <ion-card-title> Validación de Certificados: </ion-card-title>
+      <ion-card-subtitle class="ion-text-lowercase">
+        Ingresa el codigo generado en el certificado para realizar la validación
+        en el sistema.
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form>
+        <div class="signin-btns">
+          <ion-item>
+            <ion-label position="floating">Codigo</ion-label>
+            <ion-input
+              type="text"
+              placeholder="Ingresa el código de validacion"
+              [formControl]="form.controls.codigo"
+              name="codigo"
+              required
+            ></ion-input>
+          </ion-item>
+          <ion-button
+            class="validarCer"
+            size="small"
+            fill="outline"
+            shape="round"
+            color="primary"
+            (click)="validar()"
+            [disabled]="!form.valid"
+            >Validar Certificados</ion-button
+          >
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+  <app-footer></app-footer>
+</ion-content>
