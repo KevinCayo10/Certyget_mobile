@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar> </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="ion-no-margin">
+    <ion-img src="assets/imagenes/header.png"></ion-img>
+    <ion-img
+      class="logo"
+      src="../../../../assets/imagenes/certyget.svg"
+    ></ion-img>
+    <ion-card-header>
+      <ion-card-title> Mensaje informativo: </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="signin-btns">
+        <div class="mensajeInformativo">
+          Certyget informa que el documento con código de verificación
+          <span class="codigoVerificacion"> {{ codigoVerificacion }} </span> ha
+          sido validado correctamente.
+        </div>
+        <ion-button
+          class="validarCer"
+          size="small"
+          fill="solid"
+          shape="round"
+          color="primary"
+          (click)="goToMain()"
+          >Aceptar</ion-button
+        >
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <app-footer></app-footer>
+</ion-content>

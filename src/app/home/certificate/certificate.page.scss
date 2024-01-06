@@ -1,7 +1,9 @@
 .custom-content {
   padding: 20px;
 }
-
+ion-content {
+  background-color: red;
+}
 .custom-card {
   margin-bottom: 20px;
   background-color: #313338;
@@ -98,21 +100,20 @@ app-footer {
   bottom: 0;
   width: 100%;
   height: auto;
-  background: #edfffe;
+  background: #dee7fa;
   color: black;
   text-align: center;
   font-size: 11px;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
-  
 }
 app-logo {
   margin: 0 auto;
 }
 ion-list {
   /* background-color: red; */
-  width: 85%;
-  height: 80%;
+  width: 100%;
+
   margin: 0 auto;
 }
 ion-input {
