@@ -46,13 +46,23 @@ export class ValidatorPage implements OnInit {
         },
         (error) => {
           console.log('Error al validar el certificado', error);
-          this.validatorService.presentToast({
-            message: error.error.message || 'Error al validar el certificado',
-            duration: 3000,
-            color: 'danger',
-            position: 'bottom',
-            icon: 'alert-circle-outline',
-          });
+          if (error && error.error && error.error.message) {
+            this.validatorService.presentToast({
+              message: error.error.message,
+              duration: 3000,
+              color: 'danger',
+              position: 'bottom',
+              icon: 'alert-circle-outline',
+            });
+          } else {
+            this.validatorService.presentToast({
+              message: 'Error al validar el certificado',
+              duration: 3000,
+              color: 'danger',
+              position: 'bottom',
+              icon: 'alert-circle-outline',
+            });
+          }
         }
       );
     }
