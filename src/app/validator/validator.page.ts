@@ -26,11 +26,11 @@ export class ValidatorPage implements OnInit {
 
       this.validatorService.getValidarCertificado(codigo).subscribe(
         (result: any) => {
+          console.log(result);
           if (
             result.data &&
-            result.data.certificados &&
-            result.data.certificados.length > 0 &&
-            codigo === result.data.certificados[0].cod_gen_cer
+            result.data.length > 0 &&
+            codigo === result.data[0].cod_gen_cer
           ) {
             this.mostrarMensajeModal(codigo);
           } else {
