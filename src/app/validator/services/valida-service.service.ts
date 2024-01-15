@@ -18,7 +18,7 @@ export class ValidaServiceService {
   modalCtrl = inject(ModalController);
   alertCtrl = inject(AlertController);
   API =
-    'https://axiomatic-sonar-405920.rj.r.appspot.com/api/certificados/validate/code/cer';
+    'https://fabled-opus-411016.rj.r.appspot.com/api/certificados/validate/code/cer';
 
   constructor(private http: HttpClient, private router: Router) {}
   getValidarCertificado(code: any) {

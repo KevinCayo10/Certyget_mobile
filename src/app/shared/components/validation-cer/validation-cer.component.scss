@@ -1,11 +1,8 @@
-/* Ajuste de color para el icono del botón de cerrar en la esquina superior derecha */
 ion-button.close-button {
-  --color: black; /* Cambia el color del icono según tu preferencia */
+  --color: black;
 }
-
-/* Resto de tus estilos existentes */
 ion-content {
-  --ion-background-color: #dee7fa !important;
+  --ion-background-color: #ffffff !important;
 }
 
 ion-toolbar {
@@ -44,32 +41,12 @@ ion-card {
   --ion-color-primary: #215ab7;
 }
 
-.text-tag {
-  margin-top: 40px;
-  text-align: center;
-  span {
-    font-size: 13px;
-    font-weight: normal;
-    color: #898585;
-  }
-}
-
-.social-btns {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.social-btns ion-button {
-  width: 40px;
-  padding-left: 5px !important;
-}
-
 app-footer {
   position: fixed;
   bottom: 0;
   width: 100%;
   height: auto;
-  background: #dee7fa;
+  background: #ffffff;
   color: black;
   text-align: center;
   font-size: 11px;
@@ -78,20 +55,28 @@ app-footer {
 }
 
 .validarCer {
-  margin-top: 20px;
+  margin: 0 auto;
+  
 }
 
 .back {
   color: whitesmoke;
 }
-
+.contLogo {
+  position: absolute;
+  top: 130px; /* Ajusta la posición vertical según sea necesario */
+  left: 50%; /* Centra horizontalmente */
+  transform: translateX(-50%); /* Centra horizontalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; /* Asegura que esté sobre la imagen del encabezado */
+}
 .logo {
   width: 100px;
   height: auto;
   display: block;
-  margin: 0 auto;
   position: relative;
-  transform: translateY(-30%);
 }
 
 .mensajeInformativo {
@@ -101,9 +86,70 @@ app-footer {
   font-weight: 300;
   margin: 0 auto;
   width: 90%;
-  margin-top: 20px;
   margin-bottom: 20px;
 }
-span{
+span {
   font-weight: bolder;
 }
+.botonesAcciones {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.certificado {
+  margin: 0 auto;
+  width: 90%;
+  margin-bottom: 20px;
+  color: #080808;
+}
+.desCertificado {
+  margin: 0 auto;
+  margin-top: 5px;
+}
+.informacion {
+  margin-top: 40px;
+}
+.logoUta {
+  display: none !important;
+}
+/* Estilos específicos para el modal en pantallas grandes */
+@media only screen and (min-width: 768px) {
+  .logoUta {
+    display: flex !important;
+    position: absolute;
+    top: 1%; /* Ajusta la posición vertical según tus necesidades */
+    left: 25px;
+  }
+  .logoUta ion-img {
+    max-width: 50%;
+  }
+  .containerHeader {
+    width: 100%;
+    height: 120px;
+    position: relative;
+  }
+  .containerHeader ion-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  ion-card{
+    height: auto;
+  }
+  .informacion {
+    margin-top: 0px;
+  }
+  .certificado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .desCertificado {
+    margin-top: 10px; /* Ajusta según sea necesario */
+  }
+  .botonesAcciones {
+    margin-top: 20px;
+  }
+}
+

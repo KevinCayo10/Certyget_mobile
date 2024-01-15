@@ -10,6 +10,12 @@ import { ValidaServiceService } from './services/valida-service.service';
   styleUrls: ['./validator.page.scss'],
 })
 export class ValidatorPage implements OnInit {
+  evento: any;
+  fecha_evento: any;
+  duracion_evento: any;
+  descargar_certificado: any;
+  certificado_receptor: any;
+
   form = new FormGroup({
     codigo: new FormControl('', [Validators.required]),
   });
@@ -27,11 +33,17 @@ export class ValidatorPage implements OnInit {
       this.validatorService.getValidarCertificado(codigo).subscribe(
         (result: any) => {
           console.log(result);
+
           if (
             result.data &&
             result.data.length > 0 &&
             codigo === result.data[0].cod_gen_cer
           ) {
+            this.evento = result.data[0].nom_cur;
+            this.fecha_evento = result.data[0].fecha_inicio_cur;
+            this.duracion_evento = result.data[0].dur_cur;
+            this.descargar_certificado = result.data[0].url_gen_cer;
+            this.certificado_receptor = result.data[0].ced_par_cer;
             this.mostrarMensajeModal(codigo);
           } else {
             console.log('No existe el código');
@@ -77,7 +89,13 @@ export class ValidatorPage implements OnInit {
       component: ValidationCerComponent,
       componentProps: {
         codigoVerificacion: codigoVerificacion,
+        evento: this.evento,
+        fecha_evento: this.fecha_evento,
+        duracion_evento: this.duracion_evento,
+        descargar_certificado: this.descargar_certificado,
+        certificado_receptor: this.certificado_receptor,
       },
+  
     });
 
     return await modal.present();

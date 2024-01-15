@@ -1,36 +1,64 @@
 <ion-header class="ion-no-border">
   <ion-toolbar> </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <ion-card class="ion-no-margin">
-    <ion-img src="assets/imagenes/header.png"></ion-img>
-    <ion-img
-      class="logo"
-      src="../../../../assets/imagenes/certyget.svg"
-    ></ion-img>
-    <ion-card-header>
-      <ion-card-title> Mensaje informativo: </ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-      <div class="signin-btns">
-        <div class="mensajeInformativo">
-          Certyget informa que el documento con código de verificación
-          <span class="codigoVerificacion"> {{ codigoVerificacion }} </span> ha
-          sido validado correctamente.
-        </div>
-        <ion-button
-          class="validarCer"
-          size="small"
-          fill="solid"
-          shape="round"
-          color="primary"
-          (click)="goToMain()"
-          >Aceptar</ion-button
-        >
+    <div class="containerHeader">
+      <ion-img src="assets/imagenes/header.png"></ion-img>
+      <div class="logoUta">
+        <ion-img src="assets/imagenes/logogris.png"></ion-img>
       </div>
-    </ion-card-content>
+    </div>
+
+    <div class="informacion">
+      <ion-card-header>
+        <ion-card-title> Mensaje informativo: </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <div class="signin-btns">
+          <div class="mensajeInformativo">
+            Certyget informa que el documento con código de verificación
+            <span class="codigoVerificacion"> {{ codigoVerificacion }} </span>
+            es valido.
+            <br />
+            <strong>Código de verificación: </strong>{{ codigoVerificacion }}
+            <br />
+            <strong>Nombre del evento: </strong> {{ evento }}
+            <br />
+            <strong>Fecha del evento: </strong
+            >{{ fecha_evento | date : "dd/MM/yyyy" }}
+
+            <br />
+            <strong>Duración del evento: </strong>{{ duracion_evento }}
+            <br />
+            <strong>Otorgado a: </strong>{{ certificado_receptor }}
+          </div>
+          <div class="certificado">
+            <strong>Certificado disponible:</strong>
+            <ion-button
+              class="desCertificado"
+              size="small"
+              fill="outline"
+              shape="round"
+              color="success"
+              (click)="descargarCertificado(descargar_certificado)"
+              >Descargar Certificado</ion-button
+            >
+          </div>
+          <div class="botonesAcciones">
+            <ion-button
+              class="validarCer"
+              size="small"
+              fill="solid"
+              shape="round"
+              (click)="goToMain()"
+              >Aceptar</ion-button
+            >
+          </div>
+        </div>
+      </ion-card-content>
+    </div>
   </ion-card>
   <app-footer></app-footer>
 </ion-content>

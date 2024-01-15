@@ -1,15 +1,28 @@
-<app-header backButton="/home"></app-header>
-<ion-content class="custom-content">
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" class="back" (click)="regresar()"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-margin">
+  <div class="containerHeader">
+    <ion-img src="assets/imagenes/header.png"></ion-img>
+    <div class="logoUta">
+      <ion-img src="assets/imagenes/logogris.png"></ion-img>
+    </div>
+  </div>
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
   <ion-list>
-    <ion-item>
-      <ion-label>Elegir Curso:</ion-label>
+    <ion-item label="ssss">
       <ion-select
         [(ngModel)]="cursoSeleccionado"
         (ionChange)="obtenerCertificados()"
+        label="Selecciona un evento"
       >
         <ion-select-option *ngFor="let curso of cursos" [value]="curso.id_cur">
           {{ curso.nom_cur }}

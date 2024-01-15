@@ -1,66 +1,3 @@
-<!-- <app-header backButton="/main"></app-header>
-<ion-content>
-  <div class="d-flex-center">
-    <app-logo></app-logo>
-    <form>
-      <ion-list lines="none">
-        <ion-item>
-          <ion-input
-            label="Apellidos"
-            labelPlacement="stacked"
-            placeholder="Ex.Granda Jimenez"
-            fill="solid"
-            [formControl]="form.controls.apellidos"
-          ></ion-input>
-          <div
-            class="validators"
-            style="color: red"
-            *ngIf="form.controls.apellidos.errors && form.controls.apellidos.touched"
-          >
-            <div *ngIf="form.controls.apellidos.errors?.['required']">
-              Este campo es requerido.
-            </div>
-            <div *ngIf="form.controls.apellidos.errors?.['pattern']">
-              Este campo no puede contener números.
-            </div>
-          </div>
-          <ion-input
-            label="Cédula"
-            labelPlacement="stacked"
-            placeholder="Ex.0503103756"
-            fill="solid"
-            [formControl]="form.controls.cedula"
-          >
-          </ion-input>
-          <div
-            class="validators"
-            style="color: red"
-            *ngIf="form.controls.cedula.errors && form.controls.cedula.touched"
-          >
-            <div *ngIf="form.controls.cedula.errors?.['required']">
-              Este campo es requerido.
-            </div>
-            <div *ngIf="form.controls.cedula.errors?.['pattern']">
-              Ingresa una cédula valida.
-            </div>
-          </div>
-        </ion-item>
-      </ion-list>
-      <ion-button
-        expand="block"
-        type="submit"
-        mode="ios"
-        color="submit"
-        [disabled]="form.invalid"
-        (click)="buscar()"
-      >
-        Buscar
-      </ion-button>
-    </form>
-    <app-footer></app-footer>
-  </div>
-</ion-content>
- -->
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -71,10 +8,15 @@
 
 <ion-content>
   <ion-card class="ion-no-margin">
-    <ion-img src="../../assets/imagenes/header.png"></ion-img>
+    <div class="containerHeader">
+      <ion-img src="assets/imagenes/header.png"></ion-img>
+      <div class="logoUta">
+        <ion-img src="assets/imagenes/logogris.png"></ion-img>
+      </div>
+    </div>
     <ion-card-header>
       <ion-card-title> Buscar Certificados: </ion-card-title>
-      <ion-card-subtitle class="ion-text-lowercase">
+      <ion-card-subtitle >
         Ingresa los apellidos y cedula del participante a realizar la busqueda
         de certificados.
       </ion-card-subtitle>
@@ -85,10 +27,10 @@
         <form>
           <ion-list>
             <ion-item>
+              <ion-label position="floating">Apellido</ion-label>
               <ion-input
-                label="Apellidos"
                 labelPlacement="stacked"
-                placeholder="Ex.Granda Jimenez"
+                placeholder="Ingresa el apellido del participante"
                 fill="solid"
                 [formControl]="form.controls.apellidos"
               ></ion-input>
@@ -105,12 +47,12 @@
                 </div>
               </div>
             </ion-item>
-
+            <br>
             <ion-item>
+              <ion-label position="floating">Cédula</ion-label>
               <ion-input
-                label="Cédula"
                 labelPlacement="stacked"
-                placeholder="Ex.0503103756"
+                placeholder="Ingresa la cedula del participante"
                 fill="solid"
                 [formControl]="form.controls.cedula"
               >
@@ -129,7 +71,7 @@
               </div>
             </ion-item>
           </ion-list>
-          <br>
+          <br />
           <ion-button
             type="submit"
             size="small"
