@@ -1,12 +1,21 @@
-.custom-content {
-  padding: 20px;
-}
 ion-content {
-  background-color: red;
+  --ion-background-color: #ffffff !important;
+}
+ion-toolbar {
+  --ion-background-color: transparent;
+  --opacity: 0;
+}
+ion-img {
+  width: 100%;
+  height: 100%;
+}
+
+ion-header {
+  position: absolute;
 }
 .custom-card {
   margin-bottom: 20px;
-  background-color: #313338;
+  background-color: #434343;
 }
 
 .custom-item {
@@ -31,11 +40,13 @@ ion-content {
 }
 
 .custom-card-header {
-  background-color: #004980;
+  height: auto;
+  background-color: #ad272e;
   color: #fff;
 }
 
 .custom-card-title {
+  height: auto;
   font-size: 1.5em;
   color: white;
   text-align: center;
@@ -81,7 +92,7 @@ ion-content {
 }
 
 .custom-download-button {
-  background-color: #004980;
+  background-color: #621c19;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -92,7 +103,7 @@ ion-content {
 .container {
   width: 100%;
   height: 100%;
-  background: #edfffe;
+  background: #ffffff;
   color: black;
 }
 app-footer {
@@ -100,7 +111,7 @@ app-footer {
   bottom: 0;
   width: 100%;
   height: auto;
-  background: #dee7fa;
+  background: #ffffff;
   color: black;
   text-align: center;
   font-size: 11px;
@@ -131,4 +142,92 @@ ion-button {
   height: fit-content;
   border-radius: 10px;
   background-color: var(--ion-color-submit);
+}
+.logoUta {
+  display: none !important;
+}
+.back {
+  color: whitesmoke;
+}
+.containerHeader {
+  width: 100%;
+  height: 180px;
+  position: relative;
+}
+.containerHeader ion-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ion-item {
+  margin-top: 10px;
+}
+@media only screen and (min-width: 768px) {
+  ion-card {
+    max-width: 100%; /* Ajusta el ancho máximo del card según tus preferencias */
+  }
+  .containerHeader {
+    width: 100%;
+    height: 135px;
+    position: relative;
+  }
+
+  .containerHeader ion-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .logoUta {
+    display: flex !important;
+    position: absolute;
+    top: 1%; /* Ajusta la posición vertical según tus necesidades */
+    left: 25px;
+  }
+  .logoUta ion-img {
+    max-width: 25%;
+  }
+  ion-card-title {
+    font-size: 35px;
+  }
+  ion-card-subtitle {
+    font-size: 20px;
+  }
+  .text-tag {
+    display: none;
+  }
+  .social-btns {
+    display: none;
+  }
+  .signin-btns {
+    gap: 50px;
+  }
+  .signin-btns ion-button {
+    width: 300px;
+    height: 60px;
+    font-weight: bolder;
+  }
+  ion-card-header {
+    margin-bottom: 30px;
+  }
+  ion-card-subtitle {
+    margin-top: 30px;
+  }
+  ion-item {
+    width: 40%;
+    border-radius: 20px;
+  }
+  .custom-card {
+    width: 30%;
+    height: auto;
+    margin-bottom: 50px;
+  }
+  .d-flex-center {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias filas */
+    justify-content: space-between;
+  }
+  .custom-card {
+    width: calc(25% - 20px); /* Calcula el ancho para asegurar 4 tarjetas por fila con márgenes entre ellas */
+    background-color: #434343;
+  }
 }

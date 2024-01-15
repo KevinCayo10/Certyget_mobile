@@ -22,7 +22,7 @@ export class ServiceService {
   private certificados: any[] = [];
   private readonly CERTIFICADOS_KEY = 'certificados';
   private readonly USER_INFO_KEY = 'user_info';
-  API = 'https://axiomatic-sonar-405920.rj.r.appspot.com/api/certificados';
+  API = 'https://fabled-opus-411016.rj.r.appspot.com/api/certificados';
 
   constructor(private http: HttpClient, private router: Router) {
     const storedCertificados = localStorage.getItem(this.CERTIFICADOS_KEY);
@@ -63,7 +63,6 @@ export class ServiceService {
     }
   }
 
-  // Nuevo método para establecer los certificados
   setCertificados(certificados: any[]) {
     const certificadosString = JSON.stringify(certificados);
     localStorage.setItem(this.certificadosKey, certificadosString);
@@ -72,13 +71,11 @@ export class ServiceService {
     const toast = await this.toastCtrl.create(opts);
     toast.present();
   }
-  // Nuevo método para almacenar la cédula y apellido en el almacenamiento local
   storeUserInfo(cedula: string, apellido: string): void {
     const userInfo = { cedula, apellido };
     localStorage.setItem(this.USER_INFO_KEY, JSON.stringify(userInfo));
   }
 
-  // Nuevo método para obtener la información del usuario almacenada en el localStorage
   getStoredUserInfo(): { cedula: string; apellido: string } | null {
     const storedUserInfo = localStorage.getItem(this.USER_INFO_KEY);
     return storedUserInfo ? JSON.parse(storedUserInfo) : null;

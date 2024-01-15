@@ -20,7 +20,6 @@ export class CertificatePage implements OnInit {
   ) {}
 
   ngOnInit() {
-    
     this.obtenerCursos();
   }
 
@@ -99,7 +98,12 @@ export class CertificatePage implements OnInit {
         )
         .subscribe(
           (result: any) => {
+            console.log(
+              'Esto es lo que tengo al seleccionar un curso:',
+              result
+            );
             // Actualiza la lista de certificados
+            this.service.setCertificados(result.data);
             this.certificados = result.data;
             console.log('Estoy volviendo a cargar el servicio: ' + result.data);
           },
@@ -132,5 +136,9 @@ export class CertificatePage implements OnInit {
           console.error('Error al obtener los cursos:', error);
         },
       });
+  }
+  regresar() {
+    this.serviceCertificado.setCertificados([]);
+    this.serviceCertificado.storeUserInfo('', '');
   }
 }
