@@ -1,7 +1,11 @@
+<!-- ion-header: Encabezado de la página sin bordes -->
 <ion-header class="ion-no-border">
+  <!-- ion-toolbar: Barra de herramientas vacía en el encabezado -->
   <ion-toolbar> </ion-toolbar>
 </ion-header>
+<!-- ion-content: Contenido principal de la página -->
 <ion-content>
+  <!-- ion-card: Tarjeta principal con información y acciones -->
   <ion-card class="ion-no-margin">
     <div class="containerHeader">
       <ion-img src="assets/imagenes/header.png"></ion-img>
@@ -9,12 +13,12 @@
         <ion-img src="assets/imagenes/logogris.png"></ion-img>
       </div>
     </div>
-
+    <!-- informacion: Sección de información con mensaje y detalles del certificado -->
     <div class="informacion">
       <ion-card-header>
         <ion-card-title> Mensaje informativo: </ion-card-title>
       </ion-card-header>
-
+      <!-- ion-card-content: Contenido de la tarjeta de información -->
       <ion-card-content>
         <div class="signin-btns">
           <div class="mensajeInformativo">
@@ -34,6 +38,7 @@
             <br />
             <strong>Otorgado a: </strong>{{ certificado_receptor }}
           </div>
+          <!-- certificado: Sección de descarga del certificado -->
           <div class="certificado">
             <strong>Certificado disponible:</strong>
             <ion-button
@@ -46,7 +51,9 @@
               >Descargar Certificado</ion-button
             >
           </div>
+          <!-- botonesAcciones: Sección de botones de acciones -->
           <div class="botonesAcciones">
+            <!-- ion-button: Botón para validar el certificado y cerrar la página -->
             <ion-button
               class="validarCer"
               size="small"
@@ -60,5 +67,6 @@
       </ion-card-content>
     </div>
   </ion-card>
+  <!-- app-footer: Componente de pie de página personalizado -->
   <app-footer></app-footer>
 </ion-content>

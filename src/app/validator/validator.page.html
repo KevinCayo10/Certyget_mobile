@@ -1,19 +1,23 @@
+<!-- ion-header: Encabezado de la página sin bordes -->
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
+      <!-- ion-back-button: Botón de retroceso con destino predeterminado a "/main" -->
       <ion-back-button defaultHref="/main" class="back"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
+<!-- ion-content: Contenido principal de la página -->
 <ion-content>
   <ion-card class="ion-no-margin">
+    <!-- containerHeader: Contenedor del encabezado con imagen y logo -->
     <div class="containerHeader">
       <ion-img src="assets/imagenes/header.png"></ion-img>
       <div class="logoUta">
         <ion-img src="assets/imagenes/logogris.png"></ion-img>
       </div>
     </div>
+    <!-- ion-card-header: Encabezado de la tarjeta de validación -->
     <ion-card-header>
       <ion-card-title> Validación de Certificados: </ion-card-title>
       <ion-card-subtitle class="ion-text-lowercase">
@@ -21,7 +25,7 @@
         en el sistema.
       </ion-card-subtitle>
     </ion-card-header>
-
+    <!-- ion-card-content: Contenido de la tarjeta con formulario -->
     <ion-card-content>
       <form>
         <div class="signin-btns">
@@ -35,6 +39,7 @@
               required
             ></ion-input>
           </ion-item>
+          <!-- ion-button: Botón para iniciar la validación de certificados -->
           <ion-button
             class="validarCer"
             size="small"
@@ -49,5 +54,6 @@
       </form>
     </ion-card-content>
   </ion-card>
+  <!-- app-footer: Componente de pie de página personalizado -->
   <app-footer></app-footer>
 </ion-content>

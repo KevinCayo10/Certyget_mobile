@@ -1,29 +1,35 @@
+<!-- CABECERA DE LA PÁGINA -->
 <ion-header class="ion-no-border">
   <ion-toolbar>
+    <!-- Botón de retroceso con ruta predeterminada a '/main' -->
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/main" class="back"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
+<!-- CONTENIDO DE LA PÁGINA -->
 <ion-content>
+  <!-- TARJETA PRINCIPAL -->
   <ion-card class="ion-no-margin">
+    <!-- CABECERA DE LA TARJETA -->
     <div class="containerHeader">
       <ion-img src="assets/imagenes/header.png"></ion-img>
       <div class="logoUta">
         <ion-img src="assets/imagenes/logogris.png"></ion-img>
       </div>
     </div>
+    <!-- ENCABEZADO DE LA TARJETA -->
     <ion-card-header>
       <ion-card-title> Buscar Certificados: </ion-card-title>
-      <ion-card-subtitle >
+      <ion-card-subtitle>
         Ingresa los apellidos y cedula del participante a realizar la busqueda
         de certificados.
       </ion-card-subtitle>
     </ion-card-header>
-
+    <!-- CUERPO DE LA TARJETA -->
     <ion-card-content>
       <div class="signin-btns">
+        <!-- Formulario para ingresar apellidos y cédula -->
         <form>
           <ion-list>
             <ion-item>
@@ -47,7 +53,7 @@
                 </div>
               </div>
             </ion-item>
-            <br>
+            <br />
             <ion-item>
               <ion-label position="floating">Cédula</ion-label>
               <ion-input
@@ -72,6 +78,7 @@
             </ion-item>
           </ion-list>
           <br />
+          <!-- Botón de búsqueda -->
           <ion-button
             type="submit"
             size="small"
@@ -87,5 +94,6 @@
       </div>
     </ion-card-content>
   </ion-card>
+  <!-- PIE DE PÁGINA DE LA APLICACIÓN -->
   <app-footer></app-footer>
 </ion-content>

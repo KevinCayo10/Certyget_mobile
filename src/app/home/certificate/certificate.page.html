@@ -1,24 +1,35 @@
+<!-- ion-header: Encabezado de la página -->
 <ion-header class="ion-no-border">
   <ion-toolbar>
+    <!-- ion-back-button: Botón de retroceso -->
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home" class="back" (click)="regresar()"></ion-back-button>
+      <ion-back-button
+        defaultHref="/home"
+        class="back"
+        (click)="regresar()"
+      ></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
+<!-- ion-content: Contenido principal de la página -->
 <ion-content class="ion-no-margin">
+  <!-- containerHeader: Contenedor del encabezado -->
   <div class="containerHeader">
     <ion-img src="assets/imagenes/header.png"></ion-img>
     <div class="logoUta">
       <ion-img src="assets/imagenes/logogris.png"></ion-img>
     </div>
   </div>
+  <!-- ion-refresher: Componente de actualización de lista -->
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-
+  <!-- ion-list: Lista de elementos -->
   <ion-list>
+    <!-- ion-select: Menú desplegable para seleccionar un evento -->
+
     <ion-item label="ssss">
+      <!-- ion-select-option: Opción dentro del menú desplegable -->
       <ion-select
         [(ngModel)]="cursoSeleccionado"
         (ionChange)="obtenerCertificados()"
@@ -32,16 +43,18 @@
   </ion-list>
 
   <div class="d-flex-center">
+    <!-- ng-container: Contenedor para la iteración de certificados -->
     <ng-container *ngFor="let certificado of certificados">
       <ion-card class="custom-card">
         <img [src]="certificado.url_gen_cer" alt="ion" class="custom-image" />
 
         <ion-card-header class="custom-card-header">
+          <!-- ion-card-title: Título de la tarjeta -->
           <ion-card-title class="custom-card-title">
             {{ certificado.nom_cur }}
           </ion-card-title>
         </ion-card-header>
-
+        <!-- ion-card-content: Contenido de la tarjeta -->
         <ion-card-content class="custom-card-content">
           Este certificado fue generado el {{
           formatearFecha(certificado.fecha_gen_cer) }}, perteneciente al curso
@@ -53,6 +66,7 @@
         <ion-footer class="custom-footer">
           <ion-row class="custom-row">
             <ion-col center text-center class="custom-col" size="12">
+              <!-- Botón para descargar el certificado -->
               <button
                 class="custom-download-button"
                 (click)="descargarCertificado(certificado)"

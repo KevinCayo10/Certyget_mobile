@@ -17,13 +17,16 @@ export class ValidaServiceService {
   toastCtrl = inject(ToastController);
   modalCtrl = inject(ModalController);
   alertCtrl = inject(AlertController);
+  // URL de la API para la validación de certificados
   API =
     'https://fabled-opus-411016.rj.r.appspot.com/api/certificados/validate/code/cer';
 
   constructor(private http: HttpClient, private router: Router) {}
+  // Método para realizar la validación de un certificado a través de la API
   getValidarCertificado(code: any) {
     return this.http.get(this.API + '/' + code);
   }
+  // Método asíncrono para mostrar un Toast (mensaje emergente) según las opciones proporcionadas
   async presentToast(opts?: ToastOptions) {
     const toast = await this.toastCtrl.create(opts);
     toast.present();

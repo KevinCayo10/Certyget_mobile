@@ -1,5 +1,8 @@
+<!-- ion-item: Elemento de lista que contiene un campo de entrada personalizado -->
 <ion-item class="custom-input" lines="none">
+  <!-- ion-icon: Icono opcional al principio del campo de entrada -->
   <ion-icon color="primary" *ngIf="icon" slot="start" [name]="icon"></ion-icon>
+  <!-- ion-input: Campo de entrada principal -->
   <ion-input
     [type]="type"
     [autocomplete]="autocomplete"
@@ -8,7 +11,9 @@
     labelPlacement="floating"
     [readonly]="readonly"
   ></ion-input>
+  <!-- ion-button: Botón al final del campo de entrada -->
   <ion-button slot="end" fill="clear" shape="round">
+    <!-- ion-icon: Icono dentro del botón (actualmente vacío, puede ser personalizado) -->
     <ion-icon slot="icon-only"></ion-icon>
   </ion-button>
 </ion-item>

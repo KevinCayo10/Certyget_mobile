@@ -9,9 +9,11 @@ import { DatePipe } from '@angular/common';
   providers: [DatePipe],
 })
 export class CertificatePage implements OnInit {
+  // Arreglos para almacenar datos relacionados con los cursos y certificados
   cursos: any[] = [];
   cursoSeleccionado: string = ''; // Curso seleccionado por el usuario
   certificados: any[] = [];
+  // Servicio y estado de carga
   service = inject(ServiceService);
   loading: boolean = false;
   constructor(
@@ -22,11 +24,10 @@ export class CertificatePage implements OnInit {
   ngOnInit() {
     this.obtenerCursos();
   }
-
+  // Método para descargar un certificado
   descargarCertificado(certificado: any) {
     // Obtener la URL de la imagen
     const imageUrl = certificado.url_gen_cer;
-
     // Realizar la solicitud HTTP para obtener la imagen
     fetch(imageUrl)
       .then((response) => response.blob())
@@ -49,10 +50,11 @@ export class CertificatePage implements OnInit {
         console.error('Error al descargar el certificado:', error);
       });
   }
-
+  // Método para formatear una fecha utilizando el servicio DatePipe
   formatearFecha(fecha: string): string {
     return this.datePipe.transform(fecha, 'dd/MM/yyyy') || '';
   }
+  // Método para manejar la actualización de la lista de certificados al hacer pull-to-refresh
   doRefresh(event: any) {
     setTimeout(() => {
       /* this.getProducts(); */
@@ -60,30 +62,7 @@ export class CertificatePage implements OnInit {
       event.target.complete();
     }, 1000);
   }
-  /* obtenerCertificados() {
-    this.loading = true;
-
-    // Llama al servicio para obtener los certificados desde la API
-    this.serviceCertificado
-      .getCertificadosYCursosByCedApe(
-        this.certificados[0].ced_par,
-        this.certificados[0].ape_pat_par
-      )
-      .subscribe(
-        (result: any) => {
-          // Actualiza la lista de certificados
-          this.certificados = result.data;
-          console.log('Estoy volviendo a cargar el servicio: ' + result.data);
-        },
-        (error) => {
-          console.error('Error al obtener los certificados:', error);
-        },
-        () => {
-          // Finaliza el indicador de carga
-          this.loading = false;
-        }
-      );
-  } */
+  // Método para obtener los certificados según el curso seleccionado
   obtenerCertificados() {
     this.loading = true;
 
@@ -121,6 +100,7 @@ export class CertificatePage implements OnInit {
       console.warn('No hay curso seleccionado');
     }
   }
+  // Método para obtener la lista de cursos
   obtenerCursos() {
     this.serviceCertificado
       .getCertificadosYCursosByCedApe(
@@ -137,6 +117,7 @@ export class CertificatePage implements OnInit {
         },
       });
   }
+  // Método para regresar y limpiar datos en el servicio
   regresar() {
     this.serviceCertificado.setCertificados([]);
     this.serviceCertificado.storeUserInfo('', '');

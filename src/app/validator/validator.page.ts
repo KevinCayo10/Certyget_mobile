@@ -10,12 +10,13 @@ import { ValidaServiceService } from './services/valida-service.service';
   styleUrls: ['./validator.page.scss'],
 })
 export class ValidatorPage implements OnInit {
+  // Propiedades para almacenar información del certificado validado
   evento: any;
   fecha_evento: any;
   duracion_evento: any;
   descargar_certificado: any;
   certificado_receptor: any;
-
+  // Formulario reactivo para el código de validación
   form = new FormGroup({
     codigo: new FormControl('', [Validators.required]),
   });
@@ -25,11 +26,13 @@ export class ValidatorPage implements OnInit {
   ) {}
 
   ngOnInit() {}
+  // Método para realizar la validación del certificado
   validar() {
     if (this.form.valid) {
+      // Obtener el código de validación del formulario
       const codigo = this.form.value.codigo;
       console.log(codigo);
-
+      // Llamar al servicio de validación de certificados
       this.validatorService.getValidarCertificado(codigo).subscribe(
         (result: any) => {
           console.log(result);
@@ -39,6 +42,7 @@ export class ValidatorPage implements OnInit {
             result.data.length > 0 &&
             codigo === result.data[0].cod_gen_cer
           ) {
+            // Asignar valores del certificado para mostrar en el modal
             this.evento = result.data[0].nom_cur;
             this.fecha_evento = result.data[0].fecha_inicio_cur;
             this.duracion_evento = result.data[0].dur_cur;
@@ -79,7 +83,7 @@ export class ValidatorPage implements OnInit {
       );
     }
   }
-
+  // Método asincrónico para mostrar el modal con información del certificado
   async mostrarMensajeModal(codigoVerificacion: any) {
     console.log(
       'Mostrando modal con código de verificación:',
@@ -95,7 +99,6 @@ export class ValidatorPage implements OnInit {
         descargar_certificado: this.descargar_certificado,
         certificado_receptor: this.certificado_receptor,
       },
-  
     });
 
     return await modal.present();
