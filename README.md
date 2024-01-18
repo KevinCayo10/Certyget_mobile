@@ -66,10 +66,10 @@ Asegúrese de tener instalados los siguientes elementos antes de proceder:
 
 El proyecto fue posible gracias a la contribución de las siguientes personas:
 
-- **Kevin Cayo** - Desarrollador - [KevinCayo10](https://github.com/KevinCayo10)   ([kcayo6155@uta.edu.ec](mailto:kcayo6155@uta.edu.ec))
-- **Erik Granda** - Desarrollador - [ErikGranda3756](https://github.com/ErikGranda3756) ([egranda3756@uta.edu.ec](mailto:egranda3756@uta.edu.ec))
-- **Rafael Brito** - Desarrollador - [RafaBrito008](https://github.com/RafaBrito008) (rbrito9162@uta.edu.ec)
-- **Johan Changoluisa** - Desarrollador - [johanariel](https://github.com/johanariel) ([jchangoluisa6803@uta.edu.ec](mailto:jchangoluisa6803@uta.edu.ec))
+- **Kevin Cayo** - Full Stack Backend - [KevinCayo10](https://github.com/KevinCayo10)   ([kcayo6155@uta.edu.ec](mailto:kcayo6155@uta.edu.ec))
+- **Erik Granda** - Full Stack Frontend - [ErikGranda3756](https://github.com/ErikGranda3756) ([egranda3756@uta.edu.ec](mailto:egranda3756@uta.edu.ec))
+- **Rafael Brito** - Gestor del Proyecto - [RafaBrito008](https://github.com/RafaBrito008) (rbrito9162@uta.edu.ec)
+- **Johan Changoluisa** - Gestor de Documentación - [johanariel](https://github.com/johanariel) ([jchangoluisa6803@uta.edu.ec](mailto:jchangoluisa6803@uta.edu.ec))
 ------
 # Capturas de Pantalla 📸
 
